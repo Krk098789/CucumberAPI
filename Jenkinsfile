@@ -1,10 +1,9 @@
 pipeline {
   agent any
   stages {
-  stages('git repo & clean') {
+  stages('git repo') {
     steps {
-      bat "rmdir /s /q CucumberAPI"
-      bat "git clone https://github.com/Krk098789/CucumberAPI.git"
+      git poll: false, url: 'https://github.com/Krk098789/CucumberAPI.git'
       bat "mvn clean -f CucumberAPI"
     }
   }
@@ -22,10 +21,6 @@ pipeline {
     steps {
       bat "mvn package -f CucumberAPI"
     }
-  }
+    }
+        }
 }
-}
-
-
-
-    
