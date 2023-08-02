@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-  stages('git repo') {
+  stage('git repo') {
     steps {
       git poll: false, url: 'https://github.com/Krk098789/CucumberAPI.git'
       bat "mvn clean -f CucumberAPI"
