@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  stages {
   stages('git repo & clean') {
     steps {
       bat "rmdir /s /q CucumberAPI"
@@ -23,7 +24,7 @@ pipeline {
     }
   }
 }
-
+}
 
 
 
